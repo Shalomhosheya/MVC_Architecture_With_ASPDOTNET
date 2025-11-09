@@ -1,24 +1,28 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplicationMVC.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure services BEFORE building
 builder.Services.AddControllersWithViews();
+
+// Add MySQL connection
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 0, 21))
+    ));
+
+// Build the app AFTER all services are configured
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-app.UseDefaultFiles();
+// Configure middleware
 app.UseStaticFiles();
 app.UseRouting();
-app.UseAuthorization();
 
-
+// Add explicit routing
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=User}/{action=Index}/{id?}");
 
 app.Run();
