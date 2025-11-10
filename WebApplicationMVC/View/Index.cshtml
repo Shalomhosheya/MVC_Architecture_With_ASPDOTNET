@@ -95,25 +95,17 @@ ViewData["Title"] = "Register User";
     delbutton.addEventListener("click", async function (event) {
         event.preventDefault();
 
-        // Simple validation
-        if (!email.value || !password.value) {
-            showMessage("Please fill in all fields", "error");
+        if (!id.value) {
+            showMessage("Please enter the user ID to delete", "error");
             return;
         }
 
-        const data = {
-            id:id.value,
-            email: email.value,
-            password: password.value,
-            
-        };
+        const data = { id: parseInt(id.value) };
 
         try {
             const response = await fetch('/User/DeleteUser', {
                 method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
 
@@ -122,12 +114,11 @@ ViewData["Title"] = "Register User";
                 console.log(result.message);
                 showMessage(result.message, "success");
 
-                // Clear form
                 id.value = "";
                 email.value = "";
                 password.value = "";
             } else {
-                showMessage("Error Deleting user", "error");
+                showMessage("Error deleting user", "error");
             }
         } catch (error) {
             console.error("Error:", error);

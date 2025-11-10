@@ -43,20 +43,19 @@ namespace WebApplicationMVC.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteUser([FromBody] User user)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-            
-            if (user == null)
-                return BadRequest(new { message = "User data is required" });
-            
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync();
-            return Ok(new
-            {
-                message = "User deleted successfully" 
-                
-            });
+            if (user == null || user.Id == 0)
+                return BadRequest(new { message = "Valid user ID is required" });
 
+            var existingUser = await _context.Users.FindAsync(user.Id);
+
+            if (existingUser == null)
+                return NotFound(new { message = "User not found" });
+
+            _context.Users.Remove(existingUser);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "User deleted successfully!" });
         }
+
     }
 }
