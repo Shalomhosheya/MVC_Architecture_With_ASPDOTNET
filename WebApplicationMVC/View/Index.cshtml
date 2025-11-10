@@ -107,7 +107,6 @@ ViewData["Title"] = "Register User";
     })
     button.addEventListener("click", async function (event) {
         event.preventDefault();
-        loadUsers()
         // Simple validation
         if (!email.value || !password.value) {
             showMessage("Please fill in all fields", "error");
@@ -133,6 +132,8 @@ ViewData["Title"] = "Register User";
                 const result = await response.json();
                 console.log(result.message);
                 showMessage(result.message, "success");
+                loadUsers()
+
 
                 // Clear form
                 email.value = "";
@@ -147,7 +148,6 @@ ViewData["Title"] = "Register User";
     });
     delbutton.addEventListener("click", async function (event) {
         event.preventDefault();
-        loadUsers()
         if (!id.value) {
             showMessage("Please enter the user ID to delete", "error");
             return;
@@ -166,6 +166,7 @@ ViewData["Title"] = "Register User";
                 const result = await response.json();
                 console.log(result.message);
                 showMessage(result.message, "success");
+                loadUsers()
 
                 id.value = "";
                 email.value = "";
@@ -202,7 +203,9 @@ ViewData["Title"] = "Register User";
                 const result = await response.json();
                 console.log(result.message);
                 showMessage(result.message, "success");
-                
+                loadUsers()
+
+
             }
         }catch(error) {
             console.error("Error:", error);
