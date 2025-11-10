@@ -62,21 +62,18 @@ namespace WebApplicationMVC.Controllers
         {
             if (user == null || user.Id == 0)
                 return BadRequest(new { message = "Valid user ID is required" });
+            var existinguser =  await _context.Users.FindAsync(user.Id);
 
-            var existingUser = await _context.Users.FindAsync(user.Id);
-
-            if (existingUser == null)
+            if (existinguser == null)
+            {
                 return NotFound(new { message = "User not found" });
-
-            // Update fields
-            existingUser.Email = user.Email;
-            existingUser.Password = user.Password;
-
-            _context.Users.Update(existingUser);
+            }
+            
+            existinguser.Email = user.Email;
+            existinguser.Password = user.Password;
+            _context.Users.Update(existinguser);
             await _context.SaveChangesAsync();
-
             return Ok(new { message = "User updated successfully" });
         }
-
     }
 }
