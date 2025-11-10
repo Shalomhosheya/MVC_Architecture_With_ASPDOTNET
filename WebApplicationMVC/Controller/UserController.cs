@@ -39,5 +39,24 @@ namespace WebApplicationMVC.Controllers
                 userId = user.Id  // Return the generated ID
             });
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUser([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            
+            if (user == null)
+                return BadRequest(new { message = "User data is required" });
+            
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+            return Ok(new
+            {
+                message = "User deleted successfully" 
+                
+            });
+
+        }
     }
 }
