@@ -8,6 +8,10 @@ ViewData["Title"] = "Register User";
     <div id="message" style="display:none; padding: 10px; margin-bottom: 15px; border-radius: 4px;"></div>
 
     <div style="margin-bottom: 15px;">
+        <label>ID:</label><br>
+        <input type="email" id="exampleInputID" placeholder="Enter ID" style="width: 100%; padding: 8px;">
+    </div>
+    <div style="margin-bottom: 15px;">
         <label>Email:</label><br>
         <input type="email" id="exampleInputEmail1" placeholder="Enter email" style="width: 100%; padding: 8px;">
     </div>
@@ -16,16 +20,36 @@ ViewData["Title"] = "Register User";
         <label>Password:</label><br>
         <input type="password" id="exampleInputPassword1" placeholder="Enter password" style="width: 100%; padding: 8px;">
     </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
 
-    <button id="submitBtn" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+        <button id="submitBtn"
+                style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+            Submit
+        </button>
+
+        <button id="deleteBtn"
+                style="padding: 10px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer;">
+            Delete
+        </button>
+
+        <button id="updateBtn"
+                style="padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">
+            Update
+        </button>
+
+    </div>
+
 </div>
 
 <script>
     console.log("Register page loaded successfully!");
 
+    const id = document.getElementById("exampleInputID");
     const email = document.getElementById("exampleInputEmail1");
     const password = document.getElementById("exampleInputPassword1");
     const button = document.getElementById("submitBtn");
+    const delbutton = document.getElementById("deleteBtn");
+    const updatebutton = document.getElementById("updateBtn");
     const messageDiv = document.getElementById("message");
 
     button.addEventListener("click", async function (event) {
@@ -39,7 +63,8 @@ ViewData["Title"] = "Register User";
 
         const data = {
             email: email.value,
-            password: password.value
+            password: password.value,
+            
         };
 
         try {
