@@ -220,16 +220,16 @@ ViewData["Title"] = "Register User";
             const response = await fetch('/User/GetAllUsers');
             if (response.ok) {
                 const users = await response.json();
-
                 const tableBody = document.querySelector("table tbody");
                 tableBody.innerHTML = ""; // Clear old data
 
                 users.forEach(user => {
                     const row = document.createElement("tr");
+                    const maskedPassword = "•".repeat(user.password.length);
                     row.innerHTML = `
                     <th scope="row">${user.id}</th>
                     <td>${user.email}</td>
-                    <td>${user.password}</td>
+                    <td>${maskedPassword}</td>
                 `;
 
                     // ✅ Add click event for each row
