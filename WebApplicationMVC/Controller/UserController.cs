@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebApplicationMVC.Models;
 
 namespace WebApplicationMVC.Controllers
@@ -75,5 +76,12 @@ namespace WebApplicationMVC.Controllers
             await _context.SaveChangesAsync();
             return Ok(new { message = "User updated successfully" });
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _context.Users.ToListAsync();
+            return Ok(users);
+        }
+
     }
 }

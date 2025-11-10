@@ -44,8 +44,8 @@ ViewData["Title"] = "Register User";
     </div>
 
 </div>
-<div class="card">
-    <table class="table table-striped-columns">
+<div class="card ">
+    <table class="table table-striped-columns table-dark ">
         <thead>
         <tr>
             <th scope="col">ID</th>
@@ -125,7 +125,7 @@ ViewData["Title"] = "Register User";
     });
     delbutton.addEventListener("click", async function (event) {
         event.preventDefault();
-
+        loadUsers()
         if (!id.value) {
             showMessage("Please enter the user ID to delete", "error");
             return;
@@ -187,6 +187,35 @@ ViewData["Title"] = "Register User";
         }
          
     });
+    // Load users when page loads
+    window.addEventListener("DOMContentLoaded", loadUsers);
+
+    async function loadUsers() {
+        try {
+            const response = await fetch('/User/GetAllUsers');
+            if (response.ok) {
+                const users = await response.json();
+
+                const tableBody = document.querySelector("table tbody");
+                tableBody.innerHTML = ""; // Clear old data
+
+                users.forEach(user => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                    <th scope="row">${user.id}</th>
+                    <td>${user.email}</td>
+                    <td>${user.password}</td>
+                `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                console.error("Failed to load users");
+            }
+        } catch (error) {
+            console.error("Error loading users:", error);
+        }
+    }
+
     function showMessage(text, type) {
         messageDiv.textContent = text;
         messageDiv.style.display = "block";
