@@ -57,5 +57,23 @@ namespace WebApplicationMVC.Controllers
             return Ok(new { message = "User deleted successfully!" });
         }
 
+        [HttpPut]
+        public async Task<IActionResult> EditUser([FromBody] User user)
+        {
+            if (user == null || user.Id == 0)
+                return BadRequest(new { message = "Valid user ID is required" });
+            var existinguser =  await _context.Users.FindAsync(user);
+
+            if (existinguser == null)
+            {
+                return NotFound(new { message = "User not found" });
+            }
+            
+            existinguser.Email = user.Email;
+            existinguser.Password = user.Password;
+            _context.Users.Update(existinguser);
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "User updated successfully" });
+        }
     }
 }
