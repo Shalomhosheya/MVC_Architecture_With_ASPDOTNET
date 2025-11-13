@@ -22,12 +22,14 @@ build_property.EnableCodeStyleSeverity =
 
 [C:/Users/shalom hosheya/RiderProjects/WebApplication/WebApplicationORM/View/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = 
-build_metadata.AdditionalFiles.TargetPath = Vmlld1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shalom hosheya/RiderProjects/WebApplication/WebApplicationORM/View/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = Vmlld1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shalom hosheya/RiderProjects/WebApplication/WebApplicationORM/View/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
