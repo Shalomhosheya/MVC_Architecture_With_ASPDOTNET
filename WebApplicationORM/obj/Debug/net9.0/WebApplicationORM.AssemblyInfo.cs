@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApplicationORM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7176b2fe84a4980003719fe7de2cbf13363c3976")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2fbc6258aa6d3d397a163dd4cf8ea07e92095c80")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApplicationORM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApplicationORM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

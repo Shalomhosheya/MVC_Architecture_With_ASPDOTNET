@@ -1,21 +1,36 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplicationORM.Models;
+using WebApplicationORM.Repository;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using MySqlConnector;
-using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ✅ Database Connection
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddTransient<MySqlConnection>(_ => new MySqlConnection(connectionString));
 
-// ✅ Enable MVC (Controllers + Views)
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 33)); // replace with your MySQL version
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        serverVersion
+    )
+);
+
+// ✅ 2. Register your repository
+builder.Services.AddScoped<UserRepository>();
+
+// ✅ 3. Add Controllers with Views (MVC)
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
+// -----------------------
+var app = builder.Build();  // <-- build AFTER adding services
+// -----------------------
 
-// ✅ Middleware
+// ✅ 4. Middleware
 app.UseStaticFiles();
 app.UseRouting();
 
+// ✅ 5. Default route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=User}/{action=Index}/{id?}"

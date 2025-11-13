@@ -1,5 +1,6 @@
 C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\bin\Debug\net9.0\appsettings.json
+C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\bin\Debug\net9.0\WebApplicationORM.staticwebassets.runtime.json
 C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\bin\Debug\net9.0\WebApplicationORM.staticwebassets.endpoints.json
 C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\bin\Debug\net9.0\WebApplicationORM.exe
 C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\bin\Debug\net9.0\WebApplicationORM.deps.json
@@ -78,4 +79,3 @@ C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\obj\Debug
 C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\obj\Debug\net9.0\WebApplicationORM.pdb
 C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\obj\Debug\net9.0\WebApplicationORM.genruntimeconfig.cache
 C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\obj\Debug\net9.0\ref\WebApplicationORM.dll
-C:\Users\shalom hosheya\RiderProjects\WebApplication\WebApplicationORM\bin\Debug\net9.0\WebApplicationORM.staticwebassets.runtime.json

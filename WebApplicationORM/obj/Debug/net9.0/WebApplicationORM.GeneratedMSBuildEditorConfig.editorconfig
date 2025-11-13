@@ -20,16 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/shalom hosheya/RiderProjects/WebApplication/WebApplicationORM/View/Index.cshtml]
+[C:/Users/shalom hosheya/RiderProjects/WebApplication/WebApplicationORM/Views/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shalom hosheya/RiderProjects/WebApplication/WebApplicationORM/View/Shared/_Layout.cshtml]
+[C:/Users/shalom hosheya/RiderProjects/WebApplication/WebApplicationORM/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = 
-build_metadata.AdditionalFiles.TargetPath = Vmlld1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shalom hosheya/RiderProjects/WebApplication/WebApplicationORM/View/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld1xIb21lXEluZGV4LmNzaHRtbA==
+[C:/Users/shalom hosheya/RiderProjects/WebApplication/WebApplicationORM/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

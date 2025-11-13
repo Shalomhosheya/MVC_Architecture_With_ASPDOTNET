@@ -2,7 +2,7 @@
 using WebApplicationORM.Models;
 using WebApplicationORM.Repository;
 
-namespace WebApplicationMVC.Controllers
+namespace WebApplicationORM.Controllers
 {
     public class UserController : Controller
     {
