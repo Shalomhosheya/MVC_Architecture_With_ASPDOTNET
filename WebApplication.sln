@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationMVC", "WebApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationORM", "WebApplicationORM\WebApplicationORM.csproj", "{62201AF7-BFF7-43E1-A854-DD01D4464119}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoDB", "RepoDB\RepoDB.csproj", "{54A9C1AD-8DAE-41B2-9AD1-9A6724B6BAF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{62201AF7-BFF7-43E1-A854-DD01D4464119}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62201AF7-BFF7-43E1-A854-DD01D4464119}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62201AF7-BFF7-43E1-A854-DD01D4464119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A9C1AD-8DAE-41B2-9AD1-9A6724B6BAF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A9C1AD-8DAE-41B2-9AD1-9A6724B6BAF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A9C1AD-8DAE-41B2-9AD1-9A6724B6BAF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A9C1AD-8DAE-41B2-9AD1-9A6724B6BAF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
